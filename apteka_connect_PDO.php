@@ -10,6 +10,17 @@
      try
      {
          $db = new PDO('mysql:host=localhost;dbname=apteka', 'root', 'admin');
+     
+         $cursor = $db->query('SELECT * FROM uzytkownicy');
+         
+         foreach($cursor as $assoctable)
+         {
+             echo($assoctable['imie']." ".$assoctable['nazwisko']."<br />");
+         }
+         $cursor->closeCursor();
+         
+         
+     
      }
      catch (PDOException $e)
      {
@@ -19,13 +30,6 @@
      
      
      
-     $statement = $db->query('SELECT * FROM uzytkownicy');
-     foreach($statement as $wiersz)
-     {
-         echo($wiersz['imie']." ".$wiersz['nazwisko']."<br />");
-     }
-     $statement->closeCursor();
-  
      
      ?>
      
