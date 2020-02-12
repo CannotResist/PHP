@@ -13,7 +13,6 @@
          echo "Mamy problem z naszym systemem webowym.";
          echo "Error: NIe udalo się utworzyc polaczenia do serwera MySQL: \n";
          echo "Errno: " . $mysqli->connect_errno . "\n";
-         echo "Error: " . $mysqli->connect_error . "\n";
          exit;
      }
      
